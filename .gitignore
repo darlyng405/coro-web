@@ -1,0 +1,53 @@
+# ===== Node =====
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ===== Builds =====
+dist/
+build/
+.astro/
+.output/
+.vercel/
+.netlify/
+
+# ===== Entorno =====
+.env
+.env.*
+!.env.example
+
+# ===== Sistema =====
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# ===== IDE =====
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.iml
+
+# ===== Go (para cuando subas el backend) =====
+api/bin/
+api/tmp/
+*.exe
+*.test
+*.out
+
+# ===== Android (para cuando subas la app) =====
+*.apk
+*.aab
+.gradle/
+local.properties
+android/.gradle/
+android/build/
+android/app/build/
+android/**/build/
+
+# ===== Logs y temporales =====
+*.log
+.cache/
+tmp/
+temp/

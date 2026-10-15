@@ -1,0 +1,166 @@
+---
+import { SITE } from '@/data/site';
+
+const year = new Date().getFullYear();
+const social = Object.entries(SITE.social).filter(([, url]) => url);
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="/logotipo.jpg" alt="CORO" width="160" height="56" />
+        <p class="footer__tagline">
+          Que ninguna voz se quede fuera del coro.
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Plataforma</h4>
+        <ul>
+          <li><a href="#que-es">Qué es CORO</a></li>
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#ods">ODS</a></li>
+          <li><a href="#descargar">Descargar</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Proyecto</h4>
+        <ul>
+          <li><a href="#equipo">Equipo</a></li>
+          <li><a href="#proposito">Propósito y visión</a></li>
+          <li><a href="/privacidad">Privacidad</a></li>
+          <li><a href="/terminos">Términos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <ul>
+          <li>
+            <a href={`mailto:${SITE.contact.generalEmail}`}>
+              {SITE.contact.generalEmail}
+            </a>
+          </li>
+          {SITE.contact.darlyngPhone && (
+            <li>
+              <a href={`tel:${SITE.contact.darlyngPhone.replace(/\s/g, '')}`}>
+                {SITE.contact.darlyngPhone}
+              </a>
+            </li>
+          )}
+        </ul>
+        {social.length > 0 && (
+          <ul class="footer__social">
+            {social.map(([name, url]) => (
+              <li>
+                <a href={url} target="_blank" rel="noopener noreferrer">
+                  {name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© {year} CORO — Proyecto de participación ciudadana juvenil.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--navy);
+    color: rgba(255, 255, 255, 0.85);
+    padding: var(--sp-8) 0 var(--sp-5);
+    margin-top: var(--sp-9);
+  }
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    gap: var(--sp-6);
+    margin-bottom: var(--sp-6);
+  }
+  .footer__brand img {
+    height: 56px;
+    width: auto;
+    margin-bottom: var(--sp-3);
+    border-radius: 8px;
+    background: white;
+    padding: 8px 14px;
+  }
+  .footer__tagline {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--fs-sm);
+    max-width: 30ch;
+    font-style: italic;
+  }
+  .footer__col h4 {
+    color: white;
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--sp-3);
+    opacity: 0.85;
+  }
+  .footer__col ul { display: flex; flex-direction: column; gap: var(--sp-2); }
+  .footer__col a {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: var(--fs-sm);
+    transition: color 0.15s ease;
+  }
+  .footer__col a:hover { color: white; }
+  .footer__social {
+    margin-top: var(--sp-3);
+    flex-direction: row !important;
+    gap: var(--sp-4) !important;
+  }
+  .footer__bottom {
+    padding-top: var(--sp-4);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: var(--fs-sm);
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+  }
+  @media (max-width: 900px) {
+    .footer { padding: var(--sp-6) 0 var(--sp-4); }
+    .footer__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-5);
+      margin-bottom: var(--sp-5);
+    }
+    .footer__brand {
+      grid-column: 1 / -1;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer__brand img {
+      height: 48px;
+    }
+    .footer__tagline {
+      max-width: none;
+    }
+  }
+  @media (max-width: 560px) {
+    .footer { padding: var(--sp-5) 0 var(--sp-4); }
+    .footer__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-4);
+    }
+    .footer__col h4 {
+      font-size: 0.7rem;
+      margin-bottom: var(--sp-2);
+    }
+    .footer__col ul { gap: var(--sp-1); }
+    .footer__col a { font-size: 0.8rem; }
+    .footer__bottom {
+      font-size: 0.75rem;
+    }
+  }
+</style>
