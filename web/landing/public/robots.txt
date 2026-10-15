@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /privacidad
+Disallow: /terminos
+
+Sitemap: https://coro.onrender.com/sitemap.xml

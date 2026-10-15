@@ -1,0 +1,162 @@
+---
+import { SITE } from '@/data/site';
+
+const navItems = [
+  { href: '#que-es', label: 'Qué es' },
+  { href: '#como-funciona', label: 'Cómo funciona' },
+  { href: '#ods', label: 'ODS' },
+  { href: '#equipo', label: 'Equipo' },
+  { href: '#descargar', label: 'Descargar' },
+];
+---
+
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="/" class="header__brand" aria-label="CORO — Inicio">
+      <img src="/logotipo.jpg" alt="CORO" width="140" height="40" />
+    </a>
+
+    <nav class="header__nav" aria-label="Navegación principal">
+      <ul>
+        {navItems.map(item => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <a href="#descargar" class="btn btn--primary header__cta">Descargar app</a>
+      <button class="header__menu" aria-label="Abrir menú" aria-expanded="false" id="menu-toggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="header__mobile" id="mobile-menu" hidden>
+    <nav aria-label="Navegación móvil">
+      <ul>
+        {navItems.map(item => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+      <a href="#descargar" class="btn btn--primary">Descargar app</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 247, 242, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .header--scrolled { border-bottom-color: var(--border); }
+  .header__inner {
+    height: var(--header-h);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-5);
+  }
+  .header__brand { display: flex; align-items: center; flex-shrink: 0; }
+  .header__brand img {
+    height: 40px;
+    width: auto;
+    border-radius: 6px;
+  }
+  .header__nav ul { display: flex; gap: var(--sp-5); align-items: center; }
+  .header__nav a {
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--ink-soft);
+    padding: var(--sp-2) 0;
+    position: relative;
+  }
+  .header__nav a:hover { color: var(--navy); }
+  .header__nav a::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: -2px;
+    height: 2px;
+    background: var(--teal);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+  }
+  .header__nav a:hover::after { transform: scaleX(1); }
+  .header__actions { display: flex; align-items: center; gap: var(--sp-3); }
+  .header__cta { padding: 10px 20px; font-size: var(--fs-sm); }
+  .header__menu {
+    display: none;
+    background: none;
+    border: none;
+    padding: var(--sp-2);
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    width: 40px; height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+  }
+  .header__menu span {
+    display: block;
+    width: 22px; height: 2px;
+    background: var(--navy);
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .header__menu[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .header__menu[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .header__menu[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .header__mobile {
+    padding: var(--sp-4) var(--sp-5) var(--sp-5);
+    border-top: 1px solid var(--border);
+    background: var(--cream);
+  }
+  .header__mobile ul { display: flex; flex-direction: column; gap: var(--sp-2); margin-bottom: var(--sp-4); }
+  .header__mobile a {
+    display: block;
+    padding: var(--sp-3) var(--sp-2);
+    font-weight: 600;
+    color: var(--ink-soft);
+    border-radius: var(--radius-sm);
+  }
+  .header__mobile a:hover { background: var(--paper); color: var(--navy); }
+  .header__mobile .btn { width: 100%; }
+  @media (max-width: 900px) {
+    .header__nav, .header__cta { display: none; }
+    .header__menu { display: flex; }
+  }
+</style>
+
+<script>
+  const header = document.getElementById('header');
+  const toggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  const onScroll = () => {
+    if (window.scrollY > 8) header?.classList.add('header--scrolled');
+    else header?.classList.remove('header--scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+    if (mobileMenu) mobileMenu.hidden = isOpen;
+  });
+
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle?.setAttribute('aria-expanded', 'false');
+      if (mobileMenu) mobileMenu.hidden = true;
+    });
+  });
+</script>

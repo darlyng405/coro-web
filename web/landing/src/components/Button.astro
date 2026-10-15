@@ -1,0 +1,38 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'accent' | 'ghost';
+  size?: 'md' | 'lg';
+  disabled?: boolean;
+  external?: boolean;
+  class?: string;
+  type?: 'button' | 'submit';
+}
+
+const {
+  href,
+  variant = 'primary',
+  size = 'md',
+  disabled = false,
+  external = false,
+  class: className = '',
+  type = 'button',
+} = Astro.props;
+
+const classes = [
+  'btn',
+  `btn--${variant}`,
+  size === 'lg' && 'btn--lg',
+  disabled && 'btn--disabled',
+  className,
+].filter(Boolean).join(' ');
+
+const Tag = href && !disabled ? 'a' : 'button';
+const attrs = Tag === 'a'
+  ? { href, ...(external && { target: '_blank', rel: 'noopener noreferrer' }) }
+  : { type, disabled };
+---
+
+<Tag class={classes} {...attrs}>
+  <slot />
+</Tag>
