@@ -11,7 +11,7 @@ export interface TeamMember {
 
 export const TEAM: TeamMember[] = [
   {
-    name: 'Ailin Cruz Crisóstomo Lopez',
+    name: 'Ailin Cruz Crisóstomo',
     role: 'Catalizadora de ideas · Estratega de innovación',
     description:
       'Transformo ideas en propuestas, conecto la innovación con necesidades reales y comunico soluciones capaces de generar impacto.',
