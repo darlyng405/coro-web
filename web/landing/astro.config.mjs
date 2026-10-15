@@ -8,9 +8,4 @@ export default defineConfig({
     inlineStylesheets: 'auto',
   },
   compressHTML: true,
-  vite: {
-    build: {
-      cssMinify: 'lightningcss',
-    },
-  },
 });
