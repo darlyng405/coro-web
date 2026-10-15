@@ -1,0 +1,48 @@
+---
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  title?: string;
+  lead?: string;
+  alt?: boolean;
+  tight?: boolean;
+  align?: 'left' | 'center';
+  class?: string;
+}
+
+const {
+  id,
+  eyebrow,
+  title,
+  lead,
+  alt = false,
+  tight = false,
+  align = 'left',
+  class: className = '',
+} = Astro.props;
+
+const classes = [
+  'section',
+  tight && 'section--tight',
+  alt && 'section--alt',
+  className,
+].filter(Boolean).join(' ');
+
+const wrapperClasses = align === 'center' ? 'text-center' : '';
+const titleWrap = align === 'center' ? 'mx-auto' : '';
+---
+
+<section id={id} class={classes}>
+  <div class="container">
+    {
+      (eyebrow || title || lead) && (
+        <header class={wrapperClasses}>
+          {eyebrow && <span class="section__eyebrow">{eyebrow}</span>}
+          {title && <h2 class={`section__title ${titleWrap}`}>{title}</h2>}
+          {lead && <p class={`section__lead ${titleWrap}`}>{lead}</p>}
+        </header>
+      )
+    }
+    <slot />
+  </div>
+</section>

@@ -1,0 +1,94 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE } from '@/data/site';
+---
+
+<BaseLayout
+  title="Términos de uso"
+  description="Reglas para usar CORO."
+  noindex
+>
+  <article class="legal">
+    <div class="container container-narrow">
+      <span class="section__eyebrow">Legal</span>
+      <h1 class="legal__title">Términos de uso</h1>
+      <p class="legal__updated">Última actualización: 15 de octubre de 2026</p>
+
+      <section>
+        <h2>1. Qué es CORO</h2>
+        <p>
+          CORO es una plataforma de participación ciudadana juvenil que
+          permite reportar problemas territoriales, seguir su estado y
+          conectar con instituciones responsables. No sustituye a los
+          canales oficiales de emergencia.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Uso responsable</h2>
+        <ul>
+          <li>Reporta solo problemas reales y verificables.</li>
+          <li>No publiques datos personales de terceros sin consentimiento.</li>
+          <li>No uses la plataforma para acosar, difamar ni discriminar.</li>
+          <li>No subas contenido ilegal o que infrinja derechos de autor.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. Contenido que publicas</h2>
+        <p>
+          Conservas la autoría de tus aportes. Al publicarlos, otorgas a CORO
+          una licencia no exclusiva para mostrarlos dentro de la plataforma
+          y en el tablero público, con fines de transparencia.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Moderación</h2>
+        <p>
+          Podemos ocultar contenido que incumpla estos términos. Si tu
+          contenido fue ocultado, tienes derecho a apelar la decisión.
+          Las apelaciones se revisan por una persona distinta a la que tomó
+          la decisión original.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Limitación de responsabilidad</h2>
+        <p>
+          CORO conecta personas e instituciones, pero no garantiza que
+          cada reporte sea resuelto. La respuesta depende de las instituciones
+          responsables de cada territorio.
+        </p>
+      </section>
+
+      <section>
+        <h2>6. Cambios</h2>
+        <p>
+          Podemos actualizar estos términos. Te avisaremos dentro de la app
+          cuando haya cambios importantes.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Contacto</h2>
+        <p>
+          Dudas o reportes sobre estos términos:
+          <a href={`mailto:${SITE.contact.generalEmail}`}>{SITE.contact.generalEmail}</a>
+        </p>
+      </section>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .legal { padding: var(--sp-9) 0; }
+  .legal__title { font-size: var(--fs-3xl); margin-bottom: var(--sp-2); }
+  .legal__updated { color: var(--muted); font-size: var(--fs-sm); font-style: italic; margin-bottom: var(--sp-7); }
+  .legal section { margin-bottom: var(--sp-6); }
+  .legal h2 { font-size: var(--fs-lg); margin-bottom: var(--sp-3); color: var(--navy); }
+  .legal p, .legal li { color: var(--ink-soft); line-height: 1.7; margin-bottom: var(--sp-3); }
+  .legal ul { padding-left: var(--sp-5); list-style: disc; }
+  .legal ul li::marker { color: var(--teal); }
+  .legal a { color: var(--teal-dark); text-decoration: underline; }
+</style>

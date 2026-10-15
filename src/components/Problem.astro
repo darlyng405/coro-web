@@ -1,0 +1,116 @@
+---
+---
+
+<section class="problem">
+  <div class="container">
+    <div class="problem__intro">
+      <span class="section__eyebrow">El problema</span>
+      <h2 class="problem__title">
+        No es apatía. Es falta de espacios donde la voz joven se convierta en acción.
+      </h2>
+    </div>
+
+    <div class="problem__stats">
+      <article class="stat">
+        <span class="stat__number">70<span class="stat__unit">%</span></span>
+        <p class="stat__text">
+          de los jóvenes dominicanos considera la política
+          <strong>poco o nada importante</strong>.
+        </p>
+        <span class="stat__source">IDEICE, Encuesta de Juventud (2022)</span>
+      </article>
+
+      <article class="stat">
+        <span class="stat__number">4.7<span class="stat__unit">%</span></span>
+        <p class="stat__text">
+          de los parlamentarios en América Latina tiene
+          <strong>menos de 30 años</strong>.
+        </p>
+        <span class="stat__source">PNUD (2024)</span>
+      </article>
+
+      <article class="stat">
+        <span class="stat__number">75.7<span class="stat__unit">%</span></span>
+        <p class="stat__text">
+          de los jóvenes cree que su país es gobernado por
+          <strong>grupos que responden a sus propios intereses</strong>.
+        </p>
+        <span class="stat__source">PNUD (2024)</span>
+      </article>
+    </div>
+
+    <p class="problem__closing">
+      CORO no parte de que a los jóvenes "no les importe nada".
+      Parte de que <strong>faltan herramientas útiles, trazables y accesibles</strong>
+      donde la participación se convierta en colaboración, propuestas y acciones medibles.
+    </p>
+  </div>
+</section>
+
+<style>
+  .problem {
+    background: var(--navy);
+    color: rgba(255, 255, 255, 0.85);
+    padding: var(--sp-9) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .problem::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 0%, rgba(46, 159, 182, 0.25), transparent 55%);
+    pointer-events: none;
+  }
+  .problem :global(.section__eyebrow) { color: var(--orange); }
+  .problem__intro { max-width: 780px; margin-bottom: var(--sp-8); position: relative; }
+  .problem__title { color: white; font-size: var(--fs-3xl); line-height: 1.15; margin-top: var(--sp-2); }
+  .problem__stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--sp-5);
+    margin-bottom: var(--sp-7);
+    position: relative;
+  }
+  .stat {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    backdrop-filter: blur(8px);
+  }
+  .stat__number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 1.5rem + 3.5vw, 4rem);
+    font-weight: 800;
+    line-height: 1;
+    color: var(--orange);
+    margin-bottom: var(--sp-4);
+    letter-spacing: -0.03em;
+  }
+  .stat__unit { font-size: 0.5em; color: var(--teal); margin-left: 2px; }
+  .stat__text {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: var(--fs-base);
+    line-height: 1.5;
+    margin-bottom: var(--sp-3);
+  }
+  .stat__text strong { color: white; }
+  .stat__source {
+    display: block;
+    font-size: var(--fs-xs);
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+  }
+  .problem__closing {
+    max-width: 780px;
+    font-size: var(--fs-lg);
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.85);
+    padding-top: var(--sp-6);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+  }
+  .problem__closing strong { color: var(--orange); }
+</style>
