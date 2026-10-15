@@ -9,7 +9,7 @@ const social = Object.entries(SITE.social).filter(([, url]) => url);
   <div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <img src="/logotipo.jpg" alt="CORO" width="160" height="56" />
+        <img src="/logotipo.jpg" alt="CORO" />
         <p class="footer__tagline">
           Que ninguna voz se quede fuera del coro.
         </p>
@@ -80,22 +80,26 @@ const social = Object.entries(SITE.social).filter(([, url]) => url);
   }
   .footer__grid {
     display: grid;
-    grid-template-columns: 1.5fr repeat(3, 1fr);
+    grid-template-columns: 1.6fr repeat(3, 1fr);
     gap: var(--sp-6);
     margin-bottom: var(--sp-6);
+    align-items: start;
   }
   .footer__brand img {
-    height: 56px;
+    height: 64px;
     width: auto;
+    max-width: 240px;
+    object-fit: contain;
     margin-bottom: var(--sp-3);
     border-radius: 8px;
     background: white;
     padding: 8px 14px;
+    display: block;
   }
   .footer__tagline {
     color: rgba(255, 255, 255, 0.7);
     font-size: var(--fs-sm);
-    max-width: 30ch;
+    max-width: 32ch;
     font-style: italic;
   }
   .footer__col h4 {
@@ -112,6 +116,7 @@ const social = Object.entries(SITE.social).filter(([, url]) => url);
     color: rgba(255, 255, 255, 0.75);
     font-size: var(--fs-sm);
     transition: color 0.15s ease;
+    word-break: break-word;
   }
   .footer__col a:hover { color: white; }
   .footer__social {
@@ -135,32 +140,37 @@ const social = Object.entries(SITE.social).filter(([, url]) => url);
     }
     .footer__brand {
       grid-column: 1 / -1;
-      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
+      text-align: center;
     }
     .footer__brand img {
-      height: 48px;
+      height: 60px;
+      max-width: 220px;
     }
-    .footer__tagline {
-      max-width: none;
-    }
+    .footer__tagline { max-width: none; }
   }
   @media (max-width: 560px) {
     .footer { padding: var(--sp-5) 0 var(--sp-4); }
     .footer__grid {
       grid-template-columns: 1fr 1fr;
       gap: var(--sp-4);
+      margin-bottom: var(--sp-4);
+    }
+    .footer__brand img {
+      height: 52px;
+      max-width: 190px;
     }
     .footer__col h4 {
       font-size: 0.7rem;
       margin-bottom: var(--sp-2);
     }
-    .footer__col ul { gap: var(--sp-1); }
-    .footer__col a { font-size: 0.8rem; }
+    .footer__col ul { gap: 4px; }
+    .footer__col a { font-size: 0.78rem; }
     .footer__bottom {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
+      padding-top: var(--sp-3);
     }
   }
 </style>

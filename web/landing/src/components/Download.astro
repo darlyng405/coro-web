@@ -88,11 +88,12 @@ import { SITE } from '@/data/site';
   .download__specs strong { color: white; }
   .download__actions { position: relative; }
   .download__visual { display: flex; justify-content: center; position: relative; }
+
   .phone {
-    width: 200px;
-    aspect-ratio: 9 / 16;
+    width: 220px;
+    aspect-ratio: 9 / 17;
     background: #0B1219;
-    border-radius: 28px;
+    border-radius: 30px;
     padding: 10px;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.06) inset;
     position: relative;
@@ -111,9 +112,9 @@ import { SITE } from '@/data/site';
   }
   .phone__screen {
     background: var(--cream);
-    border-radius: 20px;
+    border-radius: 22px;
     height: 100%;
-    padding: 30px 16px 14px;
+    padding: 34px 16px 16px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -122,7 +123,7 @@ import { SITE } from '@/data/site';
   .phone__logo {
     font-family: var(--font-display);
     font-weight: 800;
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     color: var(--navy);
     letter-spacing: -0.02em;
     margin-bottom: 6px;
@@ -137,41 +138,51 @@ import { SITE } from '@/data/site';
     color: var(--navy);
     font-weight: 700;
     font-size: 0.7rem;
-    padding: 5px 12px;
+    padding: 6px 14px;
     border-radius: var(--radius-pill);
     text-transform: uppercase;
     letter-spacing: 0.06em;
     white-space: nowrap;
+    flex-shrink: 0;
   }
+
   @media (max-width: 800px) {
     .download { padding: var(--sp-7) 0; }
     .download__card {
       grid-template-columns: 1fr;
       padding: var(--sp-6) var(--sp-5);
       text-align: center;
+      gap: var(--sp-5);
     }
     .download__specs li { text-align: left; }
     .download__actions :global(.btn) { width: 100%; }
     .phone {
-      width: 170px;
-      aspect-ratio: 9 / 17;
+      width: 200px;
+      aspect-ratio: 9 / 18;
       transform: rotate(0deg);
+      margin: 0 auto;
     }
     .phone__screen {
-      padding: 26px 14px 12px;
-      gap: 8px;
+      padding: 30px 14px 14px;
+      gap: 9px;
     }
   }
-  @media (max-width: 420px) {
+  @media (max-width: 480px) {
+    .download__card { padding: var(--sp-5) var(--sp-4); }
     .phone {
-      width: 150px;
+      width: 180px;
+      aspect-ratio: 9 / 18;
     }
     .phone__screen {
-      padding: 22px 12px 10px;
+      padding: 26px 12px 12px;
+      gap: 8px;
     }
     .phone__badge {
       font-size: 0.65rem;
-      padding: 4px 10px;
+      padding: 5px 12px;
     }
+  }
+  @media (max-width: 360px) {
+    .phone { width: 160px; }
   }
 </style>

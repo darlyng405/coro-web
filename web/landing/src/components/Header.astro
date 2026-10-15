@@ -13,7 +13,7 @@ const navItems = [
 <header class="header" id="header">
   <div class="container header__inner">
     <a href="/" class="header__brand" aria-label="CORO — Inicio">
-      <img src="/logotipo.jpg" alt="CORO" width="200" height="56" />
+      <img src="/logotipo.jpg" alt="CORO" />
     </a>
 
     <nav class="header__nav" aria-label="Navegación principal">
@@ -49,7 +49,7 @@ const navItems = [
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(250, 247, 242, 0.85);
+    background: rgba(250, 247, 242, 0.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid transparent;
@@ -63,11 +63,19 @@ const navItems = [
     justify-content: space-between;
     gap: var(--sp-5);
   }
-  .header__brand { display: flex; align-items: center; flex-shrink: 0; }
+  .header__brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 4px 0;
+  }
   .header__brand img {
-    height: 56px;
+    height: 64px;
     width: auto;
-    border-radius: 6px;
+    max-width: 240px;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
   }
   .header__nav ul { display: flex; gap: var(--sp-5); align-items: center; }
   .header__nav a {
@@ -99,7 +107,7 @@ const navItems = [
     cursor: pointer;
     flex-direction: column;
     gap: 5px;
-    width: 40px; height: 56px;
+    width: 40px; height: 40px;
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-sm);
@@ -132,6 +140,10 @@ const navItems = [
   @media (max-width: 900px) {
     .header__nav, .header__cta { display: none; }
     .header__menu { display: flex; }
+    .header__brand img { height: 52px; max-width: 200px; }
+  }
+  @media (max-width: 480px) {
+    .header__brand img { height: 44px; max-width: 170px; }
   }
 </style>
 
