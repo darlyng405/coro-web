@@ -67,15 +67,15 @@ const navItems = [
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    padding: 4px 0;
   }
   .header__brand img {
-    height: 64px;
+    height: 80px;
     width: auto;
-    max-width: 240px;
+    max-width: 280px;
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: 10px;
     display: block;
+    mix-blend-mode: multiply;
   }
   .header__nav ul { display: flex; gap: var(--sp-5); align-items: center; }
   .header__nav a {
@@ -140,10 +140,10 @@ const navItems = [
   @media (max-width: 900px) {
     .header__nav, .header__cta { display: none; }
     .header__menu { display: flex; }
-    .header__brand img { height: 52px; max-width: 200px; }
+    .header__brand img { height: 64px; max-width: 220px; }
   }
   @media (max-width: 480px) {
-    .header__brand img { height: 44px; max-width: 170px; }
+    .header__brand img { height: 56px; max-width: 180px; }
   }
 </style>
 
