@@ -1,0 +1,230 @@
+VozDelPueblo/
+│
+├── .gitignore
+├── .editorconfig
+├── README.md
+├── build.gradle.kts
+├── settings.gradle.kts
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+│
+├── gradle/
+│   ├── libs.versions.toml
+│   └── wrapper/
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+│
+└── app/
+    ├── build.gradle.kts
+    ├── proguard-rules.pro
+    │
+    └── src/
+        │
+        ├── main/
+        │   │
+        │   ├── AndroidManifest.xml
+        │   │
+        │   ├── java/
+        │   │   └── com/
+        │   │       └── vozdelpueblo/
+        │   │           │
+        │   │           ├── MainActivity.kt
+        │   │           ├── VozApplication.kt
+        │   │           │
+        │   │           ├── core/
+        │   │           │   ├── AppResult.kt
+        │   │           │   ├── Constants.kt
+        │   │           │   └── DateFormatter.kt
+        │   │           │
+        │   │           ├── data/
+        │   │           │   │
+        │   │           │   ├── local/
+        │   │           │   │   └── SessionManager.kt
+        │   │           │   │
+        │   │           │   ├── mock/
+        │   │           │   │   └── MockData.kt
+        │   │           │   │
+        │   │           │   ├── model/
+        │   │           │   │   ├── AgeRange.kt
+        │   │           │   │   ├── Category.kt
+        │   │           │   │   ├── Consultation.kt
+        │   │           │   │   ├── Proposal.kt
+        │   │           │   │   ├── ProposalSort.kt
+        │   │           │   │   ├── ProposalStatus.kt
+        │   │           │   │   ├── StatusEvent.kt
+        │   │           │   │   └── User.kt
+        │   │           │   │
+        │   │           │   ├── network/
+        │   │           │   │   ├── ApiClient.kt
+        │   │           │   │   ├── ApiService.kt
+        │   │           │   │   ├── AuthInterceptor.kt
+        │   │           │   │   ├── NetworkResult.kt
+        │   │           │   │   ├── dto/
+        │   │           │   │   │   ├── ApiErrorDto.kt
+        │   │           │   │   │   ├── AuthDto.kt
+        │   │           │   │   │   ├── ConsultationDto.kt
+        │   │           │   │   │   └── ProposalDto.kt
+        │   │           │   │   └── mapper/
+        │   │           │   │       ├── ConsultationMapper.kt
+        │   │           │   │       ├── ProposalMapper.kt
+        │   │           │   │       └── UserMapper.kt
+        │   │           │   │
+        │   │           │   └── repository/
+        │   │           │       ├── AuthRepository.kt
+        │   │           │       ├── ConsultationRepository.kt
+        │   │           │       └── ProposalRepository.kt
+        │   │           │
+        │   │           ├── di/
+        │   │           │   └── ServiceLocator.kt
+        │   │           │
+        │   │           ├── notification/
+        │   │           │   └── NotificationSimulator.kt
+        │   │           │
+        │   │           └── ui/
+        │   │               │
+        │   │               ├── components/
+        │   │               │   ├── Buttons.kt
+        │   │               │   ├── ErrorState.kt
+        │   │               │   ├── InfoCard.kt
+        │   │               │   ├── LoadingState.kt
+        │   │               │   ├── ProposalCard.kt
+        │   │               │   ├── StatusChip.kt
+        │   │               │   ├── StylizedMap.kt
+        │   │               │   ├── TopBar.kt
+        │   │               │   └── VpBottomBar.kt
+        │   │               │
+        │   │               ├── navigation/
+        │   │               │   ├── Routes.kt
+        │   │               │   └── VozNavHost.kt
+        │   │               │
+        │   │               ├── screens/
+        │   │               │   ├── auth/
+        │   │               │   │   ├── LoginScreen.kt
+        │   │               │   │   └── RegisterScreen.kt
+        │   │               │   ├── consultations/
+        │   │               │   │   ├── ConsultationDetailScreen.kt
+        │   │               │   │   └── ConsultationsScreen.kt
+        │   │               │   ├── home/
+        │   │               │   │   └── HomeScreen.kt
+        │   │               │   ├── map/
+        │   │               │   │   └── MapScreen.kt
+        │   │               │   ├── myproposals/
+        │   │               │   │   ├── MyProposalsScreen.kt
+        │   │               │   │   └── MySupportsScreen.kt
+        │   │               │   ├── newproposal/
+        │   │               │   │   ├── NewProposalScreen.kt
+        │   │               │   │   └── ProposalSentScreen.kt
+        │   │               │   ├── privacy/
+        │   │               │   │   └── PrivacyScreen.kt
+        │   │               │   ├── profile/
+        │   │               │   │   └── ProfileScreen.kt
+        │   │               │   └── proposaldetail/
+        │   │               │       └── ProposalDetailScreen.kt
+        │   │               │
+        │   │               ├── theme/
+        │   │               │   ├── Color.kt
+        │   │               │   ├── Shape.kt
+        │   │               │   ├── Theme.kt
+        │   │               │   └── Type.kt
+        │   │               │
+        │   │               └── viewmodel/
+        │   │                   ├── AuthViewModel.kt
+        │   │                   ├── ConsultationViewModel.kt
+        │   │                   ├── HomeViewModel.kt
+        │   │                   ├── NewProposalViewModel.kt
+        │   │                   ├── ProfileViewModel.kt
+        │   │                   ├── ProposalDetailViewModel.kt
+        │   │                   └── ViewModelFactory.kt
+        │   │
+        │   └── res/
+        │       │
+        │       ├── drawable/
+        │       │   ├── ic_launcher_foreground.xml
+        │       │   ├── ic_notification.xml
+        │       │   ├── ic_status_recibida.xml
+        │       │   ├── ic_status_en_revision.xml
+        │       │   ├── ic_status_aceptada.xml
+        │       │   ├── ic_status_en_ejecucion.xml
+        │       │   ├── ic_status_resuelta.xml
+        │       │   ├── ic_status_rechazada.xml
+        │       │   ├── ic_category_residuos.xml
+        │       │   ├── ic_category_agua.xml
+        │       │   ├── ic_category_aire.xml
+        │       │   ├── ic_category_areas_verdes.xml
+        │       │   ├── ic_category_calor_urbano.xml
+        │       │   └── ic_category_otro.xml
+        │       │
+        │       ├── mipmap-anydpi-v26/
+        │       │   ├── ic_launcher.xml
+        │       │   └── ic_launcher_round.xml
+        │       │
+        │       ├── mipmap-hdpi/
+        │       │   ├── ic_launcher.png
+        │       │   └── ic_launcher_round.png
+        │       │
+        │       ├── mipmap-mdpi/
+        │       │   ├── ic_launcher.png
+        │       │   └── ic_launcher_round.png
+        │       │
+        │       ├── mipmap-xhdpi/
+        │       │   ├── ic_launcher.png
+        │       │   └── ic_launcher_round.png
+        │       │
+        │       ├── mipmap-xxhdpi/
+        │       │   ├── ic_launcher.png
+        │       │   └── ic_launcher_round.png
+        │       │
+        │       ├── mipmap-xxxhdpi/
+        │       │   ├── ic_launcher.png
+        │       │   └── ic_launcher_round.png
+        │       │
+        │       ├── values/
+        │       │   ├── colors.xml
+        │       │   ├── dimens.xml
+        │       │   ├── strings.xml
+        │       │   └── themes.xml
+        │       │
+        │       ├── values-night/
+        │       │   └── themes.xml
+        │       │
+        │       └── xml/
+        │           ├── backup_rules.xml
+        │           ├── data_extraction_rules.xml
+        │           └── network_security_config.xml
+        │
+        ├── test/
+        │   └── java/
+        │       └── com/
+        │           └── vozdelpueblo/
+        │               ├── core/
+        │               │   └── DateFormatterTest.kt
+        │               │
+        │               ├── data/
+        │               │   ├── network/
+        │               │   │   └── mapper/
+        │               │   │       ├── ConsultationMapperTest.kt
+        │               │   │       └── ProposalMapperTest.kt
+        │               │   └── repository/
+        │               │       ├── AuthRepositoryTest.kt
+        │               │       ├── ConsultationRepositoryTest.kt
+        │               │       └── ProposalRepositoryTest.kt
+        │               │
+        │               └── ui/
+        │                   └── viewmodel/
+        │                       ├── AuthViewModelTest.kt
+        │                       ├── ConsultationViewModelTest.kt
+        │                       ├── HomeViewModelTest.kt
+        │                       └── NewProposalViewModelTest.kt
+        │
+        └── androidTest/
+            └── java/
+                └── com/
+                    └── vozdelpueblo/
+                        ├── MainActivityTest.kt
+                        │
+                        └── ui/
+                            └── screens/
+                                ├── HomeScreenTest.kt
+                                ├── LoginScreenTest.kt
+                                └── NewProposalFlowTest.kt
