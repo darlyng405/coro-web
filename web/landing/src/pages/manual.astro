@@ -1,48 +1,183 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Manual de Usuario - CORO" description="Aprende a usar CORO y transforma tu comunidad.">
+<BaseLayout title="Manual del Ciudadano - CORO" description="Aprende a usar CORO, reporta problemas en tu comunidad y haz seguimiento a las respuestas institucionales.">
   <main class="section" style="padding-top: calc(var(--header-h) + 40px);">
     <div class="container container-narrow">
       <span class="section__eyebrow">Guía Oficial</span>
       <h1 class="section__title">Manual del Ciudadano</h1>
-      <p class="section__lead">Todo lo que necesitas saber para usar CORO y hacer que tu voz sea escuchada.</p>
+      <p class="section__lead">La guía completa para usar CORO, transformar tu entorno y hacer que tu voz sea escuchada.</p>
+
       <article class="manual-content">
-        <h2>1. Primeros Pasos: Instalación y Acceso</h2>
-        <h3>¿Cómo instalo la app?</h3>
+        
+        <h2>1. Introducción: ¿Qué es CORO y para qué sirve?</h2>
+        <p>CORO no es una red social para quejarse. Es una plataforma de participación ciudadana y acción real. Su objetivo es conectar a las personas con las instituciones responsables de su municipio para resolver problemas concretos (baches, basura, fugas de agua, falta de iluminación, etc.).</p>
+        <p>A diferencia de otros canales, en CORO cada reporte que haces se convierte en un <strong>caso público con trazabilidad</strong>. Esto significa que tiene un número de protocolo, una institución responsable, un plazo de respuesta y un historial visible para toda la comunidad.</p>
+
+        <h2>2. Primeros Pasos: Instalación y Acceso</h2>
+        <h3>¿Cómo instalo la aplicación?</h3>
+        <p>Actualmente, la aplicación está disponible para dispositivos Android. Sigue estos pasos:</p>
         <ol>
-          <li>Abre el navegador de tu teléfono Android y entra a la página oficial de CORO.</li>
-          <li>Toca el botón <strong>Descargar APK</strong>. Se descargará un archivo llamado <code>coro.apk</code>.</li>
-          <li>Abre el archivo descargado. Tu teléfono mostrará un aviso de seguridad. Toca <strong>Configuración</strong> y activa <strong>Permitir desde esta fuente</strong>.</li>
-          <li>Toca <strong>Instalar</strong> y espera unos segundos.</li>
+          <li>Ingresa desde el navegador de tu teléfono a nuestro sitio web oficial.</li>
+          <li>Busca la sección de descarga y toca el botón <strong>Descargar APK</strong>.</li>
+          <li>Tu teléfono descargará un archivo con extensión <code>.apk</code>. Al abrirlo, es probable que el sistema te muestre una advertencia de seguridad (porque no proviene directamente de la Google Play Store).</li>
+          <li>Toca en <strong>Configuración</strong> y activa la opción <strong>Permitir desde esta fuente</strong>.</li>
+          <li>Finalmente, toca <strong>Instalar</strong> y abre la aplicación.</li>
         </ol>
-        <h3>Crea tu cuenta</h3>
-        <p>Al abrir la app, toca <strong>Crear cuenta</strong>. Puedes registrarte con correo o usar <strong>Continuar con Google</strong>.</p>
-        <h2>2. Cómo Reportar un Incidente</h2>
-        <p>Este es el corazón de CORO. Sigue estos pasos:</p>
+
+        <h3>Creación de cuenta</h3>
+        <p>Al abrir la app, toca en <strong>Crear cuenta</strong>. Tienes dos opciones:</p>
+        <ul>
+          <li><strong>Correo electrónico:</strong> Ingresa tu nombre, correo y una contraseña segura (mínimo 8 caracteres).</li>
+          <li><strong>Google Sign-In:</strong> Si prefieres un acceso más rápido, toca "Continuar con Google" y selecciona tu cuenta.</li>
+        </ul>
+        <p><strong>Nota para menores de edad:</strong> Si indicas que tienes menos de 18 años, el sistema te pedirá obligatoriamente el correo electrónico de un tutor o representante legal para autorizar tu participación, cumpliendo con las normativas de protección de menores.</p>
+
+        <h2>3. Conociendo la Interfaz</h2>
+        <p>La aplicación cuenta con un menú de navegación inferior con cinco secciones principales:</p>
+        <ul>
+          <li><strong>Inicio:</strong> Un muro con los reportes más recientes, ordenados por fecha de actualización, donde verás rápidamente qué está pasando en tu comunidad.</li>
+          <li><strong>Mapa:</strong> Una vista geográfica de tu municipio. Los problemas se muestran como marcadores interactivos que puedes tocar para ver su estado.</li>
+          <li><strong>Reportar (Botón +):</strong> El botón central para crear un nuevo caso o sumarte a uno existente.</li>
+          <li><strong>Consultas:</strong> Una sección donde las instituciones publican encuestas sobre temas de interés público (ej. presupuesto participativo, nuevas obras).</li>
+          <li><strong>Perfil:</strong> Tu espacio personal, donde se registran tus puntos y el estado de tus aportes.</li>
+        </ul>
+
+        <h2>4. Cómo Reportar un Incidente</h2>
+        <p>Este es el proceso más importante de CORO. Sigue estos pasos para garantizar que tu reporte sea aceptado:</p>
         <ol>
-          <li>Toca <strong>Reportar</strong> en el menú inferior.</li>
-          <li>Toma una foto clara del problema.</li>
-          <li>Toca <strong>Detectar ubicación</strong> para enviar las coordenadas exactas.</li>
-          <li>Describe el problema y elige una categoría.</li>
-          <li>Toca <strong>Enviar reporte</strong>.</li>
+          <li><strong>Inicia el reporte:</strong> Toca el botón de <strong>Reportar</strong> en el menú inferior.</li>
+          <li><strong>Fotografía la evidencia:</strong> Toma una foto clara. La aplicación elimina automáticamente los metadatos ocultos por seguridad. No incluyas rostros de personas ni placas de vehículos en la foto.</li>
+          <li><strong>Confirma la ubicación:</strong> Toca "Detectar ubicación". El GPS del teléfono capturará las coordenadas exactas. Si el GPS falla, puedes ajustar el pin manualmente en el mini-mapa.</li>
+          <li><strong>Describe el problema:</strong> Escribe un título descriptivo (ej. "Bache profundo frente a la escuela") y una descripción detallada que explique el impacto del problema.</li>
+          <li><strong>Categoriza:</strong> Selecciona la categoría que mejor se ajuste (Vialidad, Residuos, Agua, etc.).</li>
+          <li><strong>Envía:</strong> Toca "Enviar reporte".</li>
         </ol>
+
         <div class="manual-highlight">
-          <h3>Sumarse a un caso existente</h3>
-          <p>Si ya hay un caso similar cerca, la app te preguntará si quieres sumarte. Toca <strong>Sumarme</strong> para que el caso tenga más prioridad.</p>
+          <h3>El "Súper Poder": Preflight y Sumarse a un caso</h3>
+          <p>Antes de crear un caso nuevo, la app verifica si ya hay un reporte similar en un radio cercano (ej. 25 metros). Si lo detecta, te mostrará un mensaje: <em>"Ya existe un caso similar, ¿quieres sumarte?"</em>.</p>
+          <p>Al tocar <strong>Sumarme</strong>, no creas un caso duplicado. En su lugar, tu reporte se agrega al caso principal y el contador de personas afectadas aumenta (ej. "2 usuarios han reportado esto"). Esto hace que la institución perciba el problema como más urgente.</p>
         </div>
-        <h2>3. Seguimiento de tus Casos</h2>
-        <p>Cada reporte recibe un protocolo único. La institución tiene 15 días para responder. Si no lo hace, el caso se marcará como <strong>Vencido</strong>.</p>
+
+        <h2>5. Seguimiento y Estados del Caso</h2>
+        <p>Al enviar un reporte, el sistema te asigna un <strong>Protocolo Único</strong> (ej. <code>CR-2026-000041</code>). Puedes usar este código para dar seguimiento al caso. Los estados posibles son:</p>
+        <ul>
+          <li><strong>Recibida:</strong> El sistema ha registrado el reporte y espera que un gestor institucional lo abra. El plazo máximo para moverse de este estado es de 15 días.</li>
+          <li><strong>En revisión:</strong> Un gestor está evaluando la evidencia y coordinando la respuesta.</li>
+          <li><strong>Aceptada:</strong> La institución validó el problema y ha definido una prioridad (Baja, Media, Alta o Urgente).</li>
+          <li><strong>En ejecución:</strong> Una brigada o equipo de mantenimiento está trabajando en el terreno para solucionarlo.</li>
+          <li><strong>Resuelta:</strong> El problema ha sido solucionado. La institución debe subir una foto como evidencia del "Después".</li>
+          <li><strong>Rechazada:</strong> El caso no es competencia de la institución o la evidencia era insuficiente. La institución debe proporcionar una justificación visible.</li>
+        </ul>
+        <p><strong>Casos Vencidos:</strong> Si pasan los 15 días y el caso sigue en estado "Recibida", el sistema lo marcará con una alerta roja como <strong>Vencido sin respuesta</strong>. Esto aparecerá destacado en la app y en el tablero público de transparencia.</p>
+
+        <h2>6. Participación Comunitaria</h2>
+        <p>CORO se fortalece con la colaboración de todos los ciudadanos:</p>
+        <ul>
+          <li><strong>Apoyar un caso:</strong> Si ves un reporte en el mapa que también te afecta a ti, puedes darle "Apoyar" (ícono de corazón). Esto suma un voto de urgencia al caso. No puedes apoyar tus propios reportes.</li>
+          <li><strong>Comentar:</strong> Puedes dejar comentarios informativos en los incidentes para dar más contexto a los gestores o a los vecinos.</li>
+          <li><strong>Moderación:</strong> Si ves contenido inapropiado, falso o que expone datos personales de terceros, puedes reportarlo. El equipo de moderación de CORO revisará el caso y, de ser necesario, ocultará la publicación.</li>
+        </ul>
+
+        <h2>7. Consultas Ciudadanas</h2>
+        <p>En la sección de Consultas, la municipalidad o instituciones pueden realizar encuestas para la toma de decisiones. Cada consulta puede tener diferentes opciones de respuesta. Al votar, tu elección queda registrada de forma segura. El sistema asegura que cada persona pueda votar una sola vez por consulta, garantizando la transparencia del proceso.</p>
+
+        <h2>8. Créditos y Verificación de Perfil</h2>
+        <p>Fomentamos la participación constante a través de un sistema de <strong>Puntos</strong> que reconocen tu esfuerzo:</p>
+        <ul>
+          <li>Ganas puntos por cada reporte nuevo que haces, por sumarte a un caso existente y por recibir apoyos en tus reportes.</li>
+          <li>Estos puntos son decorativos y suman a tu reputación dentro de la comunidad. No se compran con dinero.</li>
+          <li>La plataforma también cuenta con un proceso de <strong>Verificación</strong> para perfiles con alta trayectoria, que otorga una insignia de confianza y puede otorgar límites más altos de reportes.</li>
+        </ul>
+
+        <h2>9. Privacidad y Seguridad de los Datos</h2>
+        <p>La privacidad es un pilar fundamental de CORO:</p>
+        <ul>
+          <li>Nunca mostramos tu correo electrónico, apellido o número de teléfono en las vistas públicas.</li>
+          <li>En el caso de los menores de edad, solo se muestra el primer nombre.</li>
+          <li>Todas las fotos que subes pasan por un proceso de limpieza para eliminar los metadatos EXIF (que incluyen la ubicación exacta del archivo) antes de ser almacenadas.</li>
+          <li>Los reportes anónimos no son posibles, ya que se requiere una cuenta para mantener la trazabilidad del proceso.</li>
+        </ul>
+
+        <h2>10. Preguntas Frecuentes (FAQ)</h2>
+        <p><strong>¿Tiene algún costo usar CORO?</strong><br> No. El registro, el reporte de incidentes y la participación son 100% gratuitos para las personas.</p>
+        <p><strong>¿La inteligencia artificial decide qué reporte es más importante?</strong><br> No. En CORO, la prioridad de un caso siempre la define una persona (el gestor institucional). Los algoritmos no reemplazan el juicio humano.</p>
+        <p><strong>¿Qué pasa si mi reporte se combina con otro?</strong><br> Esto es positivo. Al sumarse, tu reporte se une a la evidencia del caso original. Se le notificará a la institución que más de una persona está afectada, lo que puede acelerar el proceso.</p>
+        <p><strong>¿Qué pasa si se me va el internet o el GPS mientras reporto?</strong><br> Si el GPS falla, puedes usar la opción de ajustar el pin de ubicación en el mapa manualmente. Si el internet falla, la aplicación te avisará para que reintentes el envío.</p>
+        <p><strong>¿Puedo ser sancionado por un reporte falso?</strong><br> La plataforma cuenta con reglas de convivencia. El uso malintencionado, el envío de contenido falso o el acoso pueden derivar en la suspensión de la cuenta.</p>
+
+        <h2>11. Soporte y Contacto</h2>
+        <p>Si experimentas problemas técnicos o tienes dudas sobre el funcionamiento de la aplicación, puedes contactar a nuestro equipo:</p>
+        <ul>
+          <li><strong>Correo electrónico:</strong> <a href="mailto:ningunavozfueradelcoro@gmail.com">ningunavozfueradelcoro@gmail.com</a></li>
+          <li><strong>Sitio Web:</strong> <a href="https://coro-beta.vercel.app">coro-beta.vercel.app</a></li>
+        </ul>
       </article>
+
     </div>
   </main>
 </BaseLayout>
+
 <style>
-  .manual-content { margin-top: 2rem; font-size: var(--fs-base); color: var(--ink-soft); line-height: 1.7; }
-  .manual-content h2 { font-size: var(--fs-xl); color: var(--navy); margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border); }
-  .manual-content h3 { font-size: var(--fs-lg); color: var(--teal-dark); margin-top: 1.5rem; }
-  .manual-content ul, .manual-content ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
-  .manual-content ul { list-style-type: disc; } .manual-content ol { list-style-type: decimal; }
-  .manual-highlight { background: var(--cream); border: 1px solid var(--border); padding: 1.5rem; border-radius: var(--radius); margin: 2rem 0; }
-  code { background: var(--border-soft); padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; }
+  .manual-content {
+    margin-top: 2rem;
+    font-size: var(--fs-base);
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .manual-content h2 {
+    font-size: var(--fs-xl);
+    color: var(--navy);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .manual-content h3 {
+    font-size: var(--fs-lg);
+    color: var(--teal-dark);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .manual-content p {
+    margin-bottom: 1rem;
+  }
+  .manual-content ul, .manual-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  .manual-content ul {
+    list-style-type: disc;
+  }
+  .manual-content ol {
+    list-style-type: decimal;
+  }
+  .manual-content li {
+    margin-bottom: 0.5rem;
+  }
+  .manual-content blockquote {
+    background: var(--teal-soft);
+    border-left: 4px solid var(--teal);
+    padding: 1rem;
+    margin: 1.5rem 0;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  }
+  .manual-highlight {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    margin: 2rem 0;
+  }
+  .manual-highlight h3 {
+    margin-top: 0;
+  }
+  code {
+    background: var(--border-soft);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+  }
 </style>
