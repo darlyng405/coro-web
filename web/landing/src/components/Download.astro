@@ -1,33 +1,27 @@
 ---
-import Button from './Button.astro';
-import { SITE } from '@/data/site';
+import { SITE } from '../config/site';
 ---
-
 <section class="download" id="descargar">
   <div class="container">
     <div class="download__card">
       <div class="download__content">
-        <span class="section__eyebrow download__eyebrow">Próximamente</span>
+        <span class="section__eyebrow download__eyebrow">Disponible ahora</span>
         <h2 class="download__title">Descarga CORO para Android</h2>
         <p class="download__lead">
-          Estamos afinando los últimos detalles de la primera versión.
-          Déjanos tu correo y te avisamos el día que esté disponible.
+          Únete a la comunidad, reporta los problemas de tu entorno y haz seguimiento a cada respuesta de las instituciones.
         </p>
-
         <ul class="download__specs">
           <li><strong>Requisito:</strong> {SITE.app.androidMinVersion} o superior</li>
           <li><strong>Tamaño:</strong> {SITE.app.apkSize}</li>
           <li><strong>Funciona sin conexión</strong> para reportar en campo</li>
           <li><strong>Gratis</strong> y sin publicidad</li>
         </ul>
-
         <div class="download__actions">
-          <Button href={`mailto:${SITE.contact.generalEmail}?subject=Quiero%20probar%20CORO`} variant="accent" size="lg">
-            Avísenme cuando esté lista
-          </Button>
+          <a class="btn btn--accent btn--lg" href={SITE.app.apkUrl} download>
+            Descargar APK
+          </a>
         </div>
       </div>
-
       <div class="download__visual" aria-hidden="true">
         <div class="phone">
           <div class="phone__notch"></div>
@@ -37,152 +31,10 @@ import { SITE } from '@/data/site';
             <div class="phone__line phone__line--short"></div>
             <div class="phone__line"></div>
             <div class="phone__line phone__line--short"></div>
-            <div class="phone__badge">Próximamente</div>
+            <div class="phone__badge">v0.1.0</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<style>
-  .download { padding: var(--sp-9) 0; }
-  .download__card {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
-    border-radius: var(--radius-xl);
-    padding: var(--sp-8);
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: var(--sp-7);
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    color: rgba(255, 255, 255, 0.9);
-  }
-  .download__card::before {
-    content: '';
-    position: absolute;
-    top: -50%; right: -20%;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(46, 159, 182, 0.35), transparent 65%);
-    pointer-events: none;
-  }
-  .download__eyebrow { color: var(--orange); }
-  .download__title { color: white; font-size: var(--fs-2xl); line-height: 1.15; margin-bottom: var(--sp-4); position: relative; }
-  .download__lead { color: rgba(255, 255, 255, 0.75); font-size: var(--fs-base); line-height: 1.6; margin-bottom: var(--sp-5); position: relative; }
-  .download__specs { display: grid; gap: var(--sp-3); margin-bottom: var(--sp-6); position: relative; }
-  .download__specs li {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: var(--fs-sm);
-    padding-left: var(--sp-5);
-    position: relative;
-    line-height: 1.5;
-  }
-  .download__specs li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--orange);
-    font-weight: 700;
-  }
-  .download__specs strong { color: white; }
-  .download__actions { position: relative; }
-  .download__visual { display: flex; justify-content: center; position: relative; }
-
-  .phone {
-    width: 220px;
-    aspect-ratio: 9 / 17;
-    background: #0B1219;
-    border-radius: 30px;
-    padding: 10px;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.06) inset;
-    position: relative;
-    transform: rotate(-3deg);
-    transition: transform 0.4s ease;
-  }
-  .download__card:hover .phone { transform: rotate(0deg) translateY(-4px); }
-  .phone__notch {
-    position: absolute;
-    top: 10px; left: 50%;
-    transform: translateX(-50%);
-    width: 70px; height: 16px;
-    background: #0B1219;
-    border-radius: 0 0 12px 12px;
-    z-index: 2;
-  }
-  .phone__screen {
-    background: var(--cream);
-    border-radius: 22px;
-    height: 100%;
-    padding: 34px 16px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    overflow: hidden;
-  }
-  .phone__logo {
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1.35rem;
-    color: var(--navy);
-    letter-spacing: -0.02em;
-    margin-bottom: 6px;
-    text-align: center;
-  }
-  .phone__line { height: 8px; background: var(--border); border-radius: 4px; flex-shrink: 0; }
-  .phone__line--short { width: 60%; }
-  .phone__badge {
-    margin-top: auto;
-    align-self: center;
-    background: var(--orange);
-    color: var(--navy);
-    font-weight: 700;
-    font-size: 0.7rem;
-    padding: 6px 14px;
-    border-radius: var(--radius-pill);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  @media (max-width: 800px) {
-    .download { padding: var(--sp-7) 0; }
-    .download__card {
-      grid-template-columns: 1fr;
-      padding: var(--sp-6) var(--sp-5);
-      text-align: center;
-      gap: var(--sp-5);
-    }
-    .download__specs li { text-align: left; }
-    .download__actions :global(.btn) { width: 100%; }
-    .phone {
-      width: 200px;
-      aspect-ratio: 9 / 18;
-      transform: rotate(0deg);
-      margin: 0 auto;
-    }
-    .phone__screen {
-      padding: 30px 14px 14px;
-      gap: 9px;
-    }
-  }
-  @media (max-width: 480px) {
-    .download__card { padding: var(--sp-5) var(--sp-4); }
-    .phone {
-      width: 180px;
-      aspect-ratio: 9 / 18;
-    }
-    .phone__screen {
-      padding: 26px 12px 12px;
-      gap: 8px;
-    }
-    .phone__badge {
-      font-size: 0.65rem;
-      padding: 5px 12px;
-    }
-  }
-  @media (max-width: 360px) {
-    .phone { width: 160px; }
-  }
-</style>
