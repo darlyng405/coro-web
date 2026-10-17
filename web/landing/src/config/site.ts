@@ -21,9 +21,9 @@ export const SITE = {
   },
 
   app: {
-    available: true,
+    available: true, // Activado para que funcione el botón
     androidMinVersion: 'Android 13 (API 33)',
-    apkSize: '61 MB',
+    apkSize: '61 MB', // Peso real
     playStoreUrl: '',
     apkUrl: '/coro.apk',
   },

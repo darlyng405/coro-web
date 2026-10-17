@@ -1,151 +1,48 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-
 <BaseLayout title="Manual de Usuario - CORO" description="Aprende a usar CORO y transforma tu comunidad.">
   <main class="section" style="padding-top: calc(var(--header-h) + 40px);">
     <div class="container container-narrow">
       <span class="section__eyebrow">Guía Oficial</span>
       <h1 class="section__title">Manual del Ciudadano</h1>
       <p class="section__lead">Todo lo que necesitas saber para usar CORO y hacer que tu voz sea escuchada.</p>
-
       <article class="manual-content">
         <h2>1. Primeros Pasos: Instalación y Acceso</h2>
         <h3>¿Cómo instalo la app?</h3>
         <ol>
           <li>Abre el navegador de tu teléfono Android y entra a la página oficial de CORO.</li>
           <li>Toca el botón <strong>Descargar APK</strong>. Se descargará un archivo llamado <code>coro.apk</code>.</li>
-          <li>Abre el archivo descargado. Tu teléfono mostrará un aviso de seguridad (porque no viene de la Play Store). Toca <strong>Configuración</strong> y activa <strong>Permitir desde esta fuente</strong>.</li>
+          <li>Abre el archivo descargado. Tu teléfono mostrará un aviso de seguridad. Toca <strong>Configuración</strong> y activa <strong>Permitir desde esta fuente</strong>.</li>
           <li>Toca <strong>Instalar</strong> y espera unos segundos.</li>
         </ol>
-        <blockquote>
-          <strong>Requisito:</strong> Necesitas un teléfono con Android 13 o superior y conexión a internet para reportar.
-        </blockquote>
-
         <h3>Crea tu cuenta</h3>
-        <p>Al abrir la app por primera vez, verás una breve introducción. Luego, toca <strong>Crear cuenta</strong>.</p>
-        <ul>
-          <li><strong>Si eres mayor de edad:</strong> Puedes registrarte con tu correo y una contraseña, o usar <strong>Continuar con Google</strong> para un acceso rápido.</li>
-          <li><strong>Si eres menor de 18 años:</strong> La app te pedirá el correo de un padre, madre o tutor. Esto es por tu seguridad. Tu nombre real nunca será público; solo se mostrará tu primer nombre.</li>
-        </ul>
-
-        <h2>2. Conociendo la Aplicación</h2>
-        <p>En la parte inferior de la pantalla verás un menú con 5 secciones principales:</p>
-        <ul>
-          <li><strong>Inicio:</strong> El muro principal donde verás los reportes recientes y su estado.</li>
-          <li><strong>Mapa:</strong> Vista geográfica de tu municipio con puntos de colores indicando dónde están los problemas.</li>
-          <li><strong>Reportar:</strong> El botón central para crear un nuevo caso.</li>
-          <li><strong>Consultas:</strong> El espacio donde el municipio te hace preguntas para tomar decisiones.</li>
-          <li><strong>Perfil:</strong> Tu espacio personal, donde verás tus puntos y podrás cerrar sesión.</li>
-        </ul>
-
-        <h2>3. Cómo Reportar un Incidente</h2>
-        <p>Este es el corazón de CORO. Sigue estos pasos para que tu reporte sea efectivo:</p>
+        <p>Al abrir la app, toca <strong>Crear cuenta</strong>. Puedes registrarte con correo o usar <strong>Continuar con Google</strong>.</p>
+        <h2>2. Cómo Reportar un Incidente</h2>
+        <p>Este es el corazón de CORO. Sigue estos pasos:</p>
         <ol>
-          <li><strong>Inicia el reporte:</strong> Toca el botón <strong>Reportar</strong> en el menú inferior.</li>
-          <li><strong>Adjunta la evidencia:</strong> Toca <em>Tomar foto</em>. Evita tomar fotos donde salgan rostros de personas o placas de vehículos.</li>
-          <li><strong>Confirma tu ubicación:</strong> Toca <strong>Detectar ubicación</strong>. La institución necesita las coordenadas exactas para enviar a la brigada.</li>
-          <li><strong>Describe el problema:</strong> Sé específico en el título (ej. "Bache frente a la escuela") y explica el impacto en la descripción.</li>
-          <li><strong>Elige la categoría:</strong> Selecciona entre Vialidad, Residuos, Agua, etc.</li>
-          <li><strong>Enviar:</strong> Toca <strong>Enviar reporte</strong>.</li>
+          <li>Toca <strong>Reportar</strong> en el menú inferior.</li>
+          <li>Toma una foto clara del problema.</li>
+          <li>Toca <strong>Detectar ubicación</strong> para enviar las coordenadas exactas.</li>
+          <li>Describe el problema y elige una categoría.</li>
+          <li>Toca <strong>Enviar reporte</strong>.</li>
         </ol>
         <div class="manual-highlight">
-          <h3>El "Súper Poder": Sumarse a un caso existente</h3>
-          <p>Si al enviar, la app detecta que ya hay un caso similar cerca, te preguntará: <em>"Ya existe un caso similar a 15 metros, ¿quieres sumarte?"</em>.</p>
-          <p>Toca <strong>Sumarme</strong>. Esto le indica a la institución que hay más de una persona afectada, aumentando la prioridad del caso en la bandeja del gestor.</p>
+          <h3>Sumarse a un caso existente</h3>
+          <p>Si ya hay un caso similar cerca, la app te preguntará si quieres sumarte. Toca <strong>Sumarme</strong> para que el caso tenga más prioridad.</p>
         </div>
-
-        <h2>4. Seguimiento de tus Casos</h2>
-        <p>Cuando envías un reporte, la app te asigna un <strong>Protocolo único</strong> (ej. <code>CR-2026-000041</code>). Guárdalo.</p>
-        <p><strong>¿Qué significan los estados?</strong></p>
-        <ul>
-          <li><strong>Recibida:</strong> El sistema ya lo tiene y espera que un gestor lo abra.</li>
-          <li><strong>En revisión:</strong> Un funcionario está evaluando el caso.</li>
-          <li><strong>Aceptada:</strong> Se validó el problema y se prepara la solución.</li>
-          <li><strong>En ejecución:</strong> La brigada está en el terreno resolviéndolo.</li>
-          <li><strong>Resuelta:</strong> El problema se solucionó. Debe haber una foto del "Después".</li>
-          <li><strong>Rechazada:</strong> No es competencia del municipio o la evidencia no era válida. La institución debe darte una explicación.</li>
-        </ul>
-        <p><strong>El plazo de 15 días:</strong> La institución tiene un máximo de 15 días para dar una primera respuesta. Si el caso sigue en "Recibida" después de ese tiempo, el sistema lo marcará como <strong>Vencido</strong> con un borde rojo, y aparecerá destacado en el tablero público de transparencia.</p>
-
-        <h2>5. Apoya a tu Comunidad</h2>
-        <p>No solo reportes; participa en los reportes de los demás. Si ves un caso en el mapa que también te afecta, entra y toca el ícono del corazón (<strong>Apoyar</strong>). Esto suma fuerza a ese incidente.</p>
-
-        <h2>6. Participa en Consultas Ciudadanas</h2>
-        <p>En la pestaña <strong>Consultas</strong>, verás las preguntas que el municipio está haciendo a la población. Puedes votar una sola vez por consulta. Tus votos no dan puntos y no se pueden comprar.</p>
-
-        <h2>7. Tu Perfil y Privacidad</h2>
-        <p>En tu perfil verás tu reputación reflejada en <strong>Puntos</strong>. Ganas puntos por reportar incidentes reales y por sumarte a casos. Estos puntos son decorativos, no se compran ni se gastan.</p>
-        <p><strong>Privacidad:</strong> Tu correo electrónico y tu nombre completo jamás se muestran en las vistas públicas. Los menores de edad solo muestran su primer nombre. La foto que subes se limpia automáticamente (se eliminan los metadatos ocultos).</p>
-
-        <h2>Preguntas Frecuentes</h2>
-        <p><strong>¿Tengo que pagar algo por reportar?</strong><br> No, el acceso a la app y los reportes son 100% gratuitos para los ciudadanos.</p>
-        <p><strong>¿La IA decide qué es urgente?</strong><br> No. La prioridad de un caso siempre la define un ser humano (el gestor de la institución).</p>
+        <h2>3. Seguimiento de tus Casos</h2>
+        <p>Cada reporte recibe un protocolo único. La institución tiene 15 días para responder. Si no lo hace, el caso se marcará como <strong>Vencido</strong>.</p>
       </article>
-
     </div>
   </main>
 </BaseLayout>
-
 <style>
-  .manual-content {
-    margin-top: 2rem;
-    font-size: var(--fs-base);
-    color: var(--ink-soft);
-    line-height: 1.7;
-  }
-  .manual-content h2 {
-    font-size: var(--fs-xl);
-    color: var(--navy);
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .manual-content h3 {
-    font-size: var(--fs-lg);
-    color: var(--teal-dark);
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-  .manual-content p {
-    margin-bottom: 1rem;
-  }
-  .manual-content ul, .manual-content ol {
-    margin-bottom: 1.5rem;
-    padding-left: 1.5rem;
-  }
-  .manual-content ul {
-    list-style-type: disc;
-  }
-  .manual-content ol {
-    list-style-type: decimal;
-  }
-  .manual-content li {
-    margin-bottom: 0.5rem;
-  }
-  .manual-content blockquote {
-    background: var(--teal-soft);
-    border-left: 4px solid var(--teal);
-    padding: 1rem;
-    margin: 1.5rem 0;
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  }
-  .manual-highlight {
-    background: var(--cream);
-    border: 1px solid var(--border);
-    padding: 1.5rem;
-    border-radius: var(--radius);
-    margin: 2rem 0;
-  }
-  .manual-highlight h3 {
-    margin-top: 0;
-  }
-  code {
-    background: var(--border-soft);
-    padding: 0.2rem 0.4rem;
-    border-radius: 4px;
-    font-family: monospace;
-    font-size: 0.9em;
-  }
+  .manual-content { margin-top: 2rem; font-size: var(--fs-base); color: var(--ink-soft); line-height: 1.7; }
+  .manual-content h2 { font-size: var(--fs-xl); color: var(--navy); margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border); }
+  .manual-content h3 { font-size: var(--fs-lg); color: var(--teal-dark); margin-top: 1.5rem; }
+  .manual-content ul, .manual-content ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+  .manual-content ul { list-style-type: disc; } .manual-content ol { list-style-type: decimal; }
+  .manual-highlight { background: var(--cream); border: 1px solid var(--border); padding: 1.5rem; border-radius: var(--radius); margin: 2rem 0; }
+  code { background: var(--border-soft); padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; }
 </style>
