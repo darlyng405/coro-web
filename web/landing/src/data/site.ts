@@ -23,7 +23,7 @@ export const SITE = {
   app: {
     available: false,
     androidMinVersion: 'Android 13 (API 33)',
-    apkSize: '~23 MB',
+    apkSize: '61 MB',
     playStoreUrl: '',
     apkUrl: '/coro.apk',
   },
